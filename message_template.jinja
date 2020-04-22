@@ -1,0 +1,24 @@
+[
+    {
+        "type": "section",
+        "text": {
+            "type": "mrkdwn",
+            "text": ":sun_with_face: Slack チャンネル 天気予報 :sun_with_face:"
+        }
+    },
+    {
+        "type": "divider"
+    },
+    {% for channel in channels %}
+    {
+        "type": "section",
+        "text": {
+            "type": "mrkdwn",
+            "text": "\n{{channel.icon}} *#{{channel.name}}*\n*トピック:* {{channel.topic}}\n*説明:* {{channel.purpose}}\n*最後の更新:* {{channel.last_update}}\n*メンバー数:* {{channel.num_members}}\n"
+        }
+    },
+    {% endfor %}
+    {
+        "type": "divider"
+    }
+]
